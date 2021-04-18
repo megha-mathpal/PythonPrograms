@@ -1,0 +1,22 @@
+#Program to print occurences of all characters in a given string and print all the characters with their occurence count
+#Sample Input "Occurence"
+#Sample Output "O1c3u1r1e2n1"
+from collections import OrderedDict
+
+def countChars(c,str):
+
+    count = 0
+    for char in str:
+        if char == c:
+            count=count+1
+    return count
+
+strInput = input("Input the string: ")
+
+L= []
+
+print("".join(OrderedDict.fromkeys(strInput)))
+for c in "".join(OrderedDict.fromkeys(strInput)):
+    L.append(c)
+    L.append(str(countChars(c,strInput)))
+print("".join(L))
